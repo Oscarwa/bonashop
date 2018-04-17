@@ -10,7 +10,13 @@ export class ProductService {
   constructor(private db: AngularFireDatabase) { }
 
   getAll(): Observable<Product[]> {
-    return this.db.list<Product>('messages').valueChanges();
+    return this.db.list<Product>('products').valueChanges();
+  }
+
+  add(item): any {
+    this.db.list<Product>('products').push(item).then(s => {
+      console.log(s);
+    })
   }
 
 }

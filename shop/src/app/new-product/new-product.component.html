@@ -1,0 +1,50 @@
+<div class="container">
+  <form #newProduct="ngForm">
+    <div class="form-group">
+      <label for="title">Nombre</label>
+      <input type="text" [(ngModel)]="item.title" class="form-control" id="title" name="title" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="description">Descripcion</label>
+      <textarea [(ngModel)]="item.description" class="form-control" id="description" name="description" placeholder="Descripcion"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="date_available">Disponible desde:</label>
+      <input [(ngModel)]="item.date_available" type="date" class="form-control" id="date_available" name="date_available">
+    </div>
+    <div class="form-group">
+      <label for="value">Costo original:</label>
+      <input [(ngModel)]="item.value" type="number" class="form-control" id="value" name="value">
+      <label for="price">Precio de venta:</label>
+      <input [(ngModel)]="item.price" type="number" class="form-control" id="price" name="price">
+      <label for="amountDiscount">Descuento en pesos:</label>
+      <input [(ngModel)]="item.amountDiscount" type="number" class="form-control" id="amountDiscount" name="amountDiscount">
+      <label for="percentageDiscount">Descuento en porcentaje:</label>
+      <input [(ngModel)]="item.percentageDiscount" type="number" class="form-control" id="percentageDiscount" name="percentageDiscount">
+    </div>
+    <div class="checkbox">
+      <label>
+        <input [(ngModel)]="item.cat_women" class="form-control" type="checkbox" name="category"> Mujeres
+      </label>
+      <label>
+        <input [(ngModel)]="item.cat_men" class="form-control" type="checkbox" name="category"> Hombres
+      </label>
+      <label>
+        <input [(ngModel)]="item.cat_child" class="form-control" type="checkbox" name="category"> Niños
+      </label>
+      <label>
+        <input [(ngModel)]="item.cat_all" class="form-control" type="checkbox" name="category"> Todos
+      </label>
+    </div>
+    <div class="attachments">
+      <label for="file">File:</label>
+      <input type="file" (change)="upload($event)" accept=".png,.jpg" />
+      <br />
+      <progress max="100" [value]="(uploadProgress | async)"></progress>
+      <div class="result" *ngIf="downloadURL | async; let uploadSrc">
+        <img [src]="uploadSrc" height="120" />
+      </div>
+    </div>
+    <button (click)="saveItem()" type="submit" class="btn btn-default">Guardar</button>
+  </form>
+</div>

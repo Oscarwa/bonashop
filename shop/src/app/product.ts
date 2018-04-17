@@ -5,21 +5,21 @@ export class Product {
         public description: string,
         public date_created: string,
         public date_available: string,
-        public cost: {
-            value: number,
-            price: number,
-            amountDiscount:number,
-            percentageDiscount: number
-        },
+        public cost: number,
+        public price: number,
+        public amountDiscount:number,
+        public percentageDiscount: number,
         // price(): number {
         //     if(!!this.cost.amountDiscount) {
         //         return 1;
         //     }
         // },
-        public category: {
-            women: boolean,
-            men: boolean,
-        },
+        // public category: {
+        public cat_women: boolean,
+        public cat_men: boolean,
+        public cat_child: boolean,
+        public cat_all: boolean,
+        // },
         tags: string[],
         photos: string[]
     ) { }

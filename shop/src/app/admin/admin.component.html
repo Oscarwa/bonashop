@@ -27,20 +27,21 @@
       </form>
   </div><!-- /card-container -->
 </div><!-- /container -->
-
-<form class="navbar-form navbar-left" role="search">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Busqueda">
+<div class="container" *ngIf="(authService.user | async)">
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Busqueda">
+    </div>
+    <a class="btn btn-default" routerLink="admin-new">Nuevo</a>
+    <button type="button" class="btn btn-default" (click)="logout()" *ngIf="authService.user | async">Cerrar sesion</button>
+  </form>
+  <div class="row"
+  *ngFor="let product of products | async">
+  
+  
+    <div class="card-block">
+      <h4 class="card-title">{{product.content}}</h4>
+      <a routerLink="admin/edit" class="btn btn-primary">$200.00</a>
+    </div>
   </div>
-  <button type="button" class="btn btn-default">Nuevo</button>
-  <button type="button" class="btn btn-default" (click)="logout()" *ngIf="authService.user | async">Cerrar sesion</button>
-</form>
-<div class="row"
-    *ngFor="let product of products | async">
-
-        
-        <div class="card-block">
-          <h4 class="card-title">{{product.content}}</h4>
-          <a routerLink="admin/edit" class="btn btn-primary">$200.00</a>
-        </div>
-  </div>
+</div>
