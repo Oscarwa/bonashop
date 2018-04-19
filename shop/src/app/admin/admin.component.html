@@ -32,16 +32,23 @@
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Busqueda">
     </div>
-    <a class="btn btn-default" routerLink="admin-new">Nuevo</a>
+    <a class="btn btn-default" routerLink="new">Nuevo</a>
     <button type="button" class="btn btn-default" (click)="logout()" *ngIf="authService.user | async">Cerrar sesion</button>
   </form>
-  <div class="row"
+  <br />
+  <div class="row product-grid"
   *ngFor="let product of products | async">
-  
-  
-    <div class="card-block">
-      <h4 class="card-title">{{product.content}}</h4>
-      <a routerLink="admin/edit" class="btn btn-primary">$200.00</a>
+    <div class="col text-left">
+        <h5 class="mb-1">{{product.title}}</h5>
+        <small>{{product.price}}</small>
+        
     </div>
+    <div class="col-2">
+      <button type="button" routerLink="edit/{{product.$key}}" class="btn btn-primary btn-sm">Edit</button>
+      <button type="button" (click)="delete(product.$key)" class="btn btn-secondary btn-sm">Delete</button>
+    </div>
+    <hr />
   </div>
+    
+  
 </div>

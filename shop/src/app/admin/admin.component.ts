@@ -24,7 +24,8 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.email = this.password = '';  
-    this.products = this.productService.getAll();
+    this.products = this.productService.getAllPlus();
+    this.products.subscribe(i => console.table(i))
   }
 
   loginSubmit() {
@@ -34,5 +35,13 @@ export class AdminComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.router.navigate(['home']);
+  }
+
+  edit(id: string) {
+    console.log(id);
+  }
+
+  delete(id: string) {
+    this.productService.delete(id);
   }
 }

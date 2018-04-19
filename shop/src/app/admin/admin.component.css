@@ -135,3 +135,7 @@
 .forgot-password:focus{
     color: rgb(12, 97, 33);
 }
+
+.container .product-grid:nth-child(odd) {
+    background-color: #c0c0c0;
+}

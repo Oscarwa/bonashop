@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map, filter, scan } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
@@ -15,16 +15,25 @@ import { Observable } from 'rxjs/Observable';
 })
 export class NewProductComponent implements OnInit {
   item: Product = <Product>{ };
+  editMode: boolean = false;
+  editId: string;
 
   constructor(private authService: AuthService,
     private router: Router,
     private productService: ProductService,
-    private afStorage: AngularFireStorage) { }
+    private afStorage: AngularFireStorage,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.item.cat_all = this.item.cat_child = this.item.cat_men = this.item.cat_women = false;
-    var now = new Date();
-    this.item.date_available = now.getFullYear() + '-0' + (now.getMonth() + 1) + '-' + now.getDate();
+    this.editId = this.route.snapshot.paramMap.get('id');
+    if(!!this.editId) {
+      this.productService.getSingle(this.editId).subscribe(i => this.item = i);
+      this.editMode = true;
+    } else {
+      this.item.cat_all = this.item.cat_child = this.item.cat_men = this.item.cat_women = false;
+      var now = new Date();
+      this.item.date_available = now.getFullYear() + '-0' + (now.getMonth() + 1) + '-' + now.getDate();
+    }
   }
 
   clearItem() {
@@ -49,8 +58,13 @@ export class NewProductComponent implements OnInit {
 
   saveItem() {
     //console.log(this.item);
-    this.item.date_created = new Date().toISOString()
-    this.productService.add(this.item);
+    if(this.editMode) {
+      this.productService.update(this.editId, this.item)
+    }
+    else {
+      this.item.date_created = new Date().toISOString()
+      this.productService.add(this.item);
+    }
   }
 
 }

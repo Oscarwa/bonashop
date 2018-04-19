@@ -10,7 +10,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent },
   {path: 'search', component: SearchComponent },
   {path: 'admin', component: AdminComponent },
-  {path: 'admin/admin-new', component: NewProductComponent },  
+  {path: 'admin/new', component: NewProductComponent },  
+  {path: 'admin/edit/:id', component: NewProductComponent },  
 
   {path: '', redirectTo: '/home', pathMatch: 'full'},  
 ];
