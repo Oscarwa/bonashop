@@ -21,6 +21,6 @@ export class Product {
         public cat_all: boolean,
         // },
         tags: string[],
-        photos: string[]
+        public photos: any[]
     ) { }
 }

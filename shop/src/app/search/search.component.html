@@ -5,7 +5,7 @@
         <div class="card">
 
           
-          <img class="card-img-top" src="http://lorempixel.com/320/200/nature" alt="Card image cap">
+          <img class="card-img-top" *ngIf="product.photos" [src]="product.photos[0].url" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">{{product.title}}</h4>
             <p class="card-text">{{product.description}}</p>

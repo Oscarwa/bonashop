@@ -41,8 +41,9 @@
       <input type="file" (change)="upload($event)" accept=".png,.jpg" />
       <br />
       <progress max="100" [value]="(uploadProgress | async)"></progress>
-      <div class="result" *ngIf="downloadURL | async; let uploadSrc">
-        <img [src]="uploadSrc" height="120" />
+      <div class="result" *ngFor="let photo of item.photos">
+        <img [src]="photo.url" height="120" />
+        <a (click)="deleteImage(photo.name)">[X]</a>
       </div>
     </div>
     <button (click)="saveItem()" type="submit" class="btn btn-default">Guardar</button>

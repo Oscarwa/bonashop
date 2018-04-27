@@ -49,11 +49,30 @@ export class NewProductComponent implements OnInit {
     const randomId = Math.random().toString(36).substring(2);
     // create a reference to the storage bucket location
     this.ref = this.afStorage.ref(randomId);
+    console.info(randomId)
     // the put method creates an AngularFireUploadTask
     // and kicks off the upload
     this.task = this.ref.put(event.target.files[0]);
     this.uploadProgress = this.task.percentageChanges();
     this.downloadURL = this.task.downloadURL();
+    this.task.then((snapshot) => {
+      console.log(snapshot);
+      this.item.photos = this.item.photos || [];
+      this.item.photos.push({
+        name: snapshot.metadata.name,
+        url: snapshot.metadata.downloadURLs[0]
+      })
+    },(error) => {
+      console.log(error)
+    })
+  }
+
+  deleteImage(ref) {
+    debugger;
+    console.log(ref);
+    this.afStorage.ref(ref).delete();
+    this.item.photos = this.item.photos.filter(x => x.name != ref);
+    
   }
 
   saveItem() {
