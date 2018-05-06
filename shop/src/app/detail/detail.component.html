@@ -28,7 +28,7 @@
             </div>
             <!-- <span class="review-no">41 reviews</span> -->
           </div>
-          <p class="product-description">{{item.description}}</p>
+          <p class="product-description" [innerHTML]="item.description"></p>
           <h4 class="price">Precio: <span [ngClass]="{'strike': hasDiscount}">${{item.price}}</span></h4>
           <h4 class="price" *ngIf="discountPercentagePrice > 0">Oferta: <span class="desc-info">${{discountPercentagePrice}} <i>({{item.percentageDiscount}}%)</i></span></h4>
           <h4 class="price" *ngIf="discountAmountPrice > 0">Oferta: <span class="desc-info">${{discountAmountPrice}} <i>(-${{item.amountDiscount}})</i></span></h4>
