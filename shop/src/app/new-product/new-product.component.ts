@@ -32,8 +32,14 @@ export class NewProductComponent implements OnInit {
     } else {
       this.item.cat_all = this.item.cat_child = this.item.cat_men = this.item.cat_women = false;
       var now = new Date();
-      this.item.date_available = now.getFullYear() + '-0' + (now.getMonth() + 1) + '-' + now.getDate();
+      this.item.date_available = now.getFullYear() + '-' + this.zeroFill(now.getMonth() + 1) + '-' + this.zeroFill(now.getDate());
+      console.info(this.item.date_available)
     }
+  }
+
+  zeroFill( num )
+  {
+    return ('00' + num).slice(-2);
   }
 
   clearItem() {
@@ -84,6 +90,7 @@ export class NewProductComponent implements OnInit {
       this.item.date_created = new Date().toISOString()
       this.productService.add(this.item);
     }
+    this.router.navigate(['admin']);
   }
 
 }
