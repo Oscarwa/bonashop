@@ -16,7 +16,7 @@ export class AdminComponent implements OnInit {
   products: Observable<Product[]>
 
   constructor(
-    private authService: AuthService,
+    public  authService: AuthService,
     private router: Router,
     private productService: ProductService
   ) {
