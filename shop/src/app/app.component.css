@@ -1,5 +1,13 @@
 .mastfoot {
+    position: absolute;
     bottom: 0px;
     width: 96%;
     overflow: hidden;
+}
+
+.masthead-brand {
+    text-align: left;
+}
+sailor {
+    padding-bottom: 86px;
 }

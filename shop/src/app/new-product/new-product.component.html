@@ -1,4 +1,6 @@
 <div class="container">
+  <h3 *ngIf="!editMode">Nuevo producto</h3>
+  <h3 *ngIf="editMode">Editar producto</h3>
   <form #newProduct="ngForm">
     <div class="form-group">
       <label for="title">Nombre</label>
@@ -6,7 +8,7 @@
     </div>
     <div class="form-group">
       <label for="description">Descripcion</label>
-      <textarea [(ngModel)]="item.description" class="form-control" id="description" name="description" placeholder="Descripcion"></textarea>
+      <textarea [(ngModel)]="item.description" class="form-control" id="description" name="description" placeholder="Descripcion" rows="6"></textarea>
     </div>
     <div class="form-group">
       <label for="date_available">Disponible desde:</label>
@@ -41,11 +43,14 @@
       <input type="file" (change)="upload($event)" accept=".png,.jpg" />
       <br />
       <progress max="100" [value]="(uploadProgress | async)"></progress>
-      <div class="result" *ngFor="let photo of item.photos">
-        <img [src]="photo.url" height="120" />
-        <a (click)="deleteImage(photo.name)">[X]</a>
-      </div>
+      <ul class="photo-thumbs">
+        <li class="result" *ngFor="let photo of item.photos">
+          <img [src]="photo.url" height="120" />
+          <a class="delete" (click)="deleteImage(photo.name)"></a>
+        </li>
+      </ul>
     </div>
-    <button (click)="saveItem()" type="submit" class="btn btn-default">Guardar</button>
+    <button routerLink="/admin" type="button" class="btn btn-default">Cancelar</button>
+    <button (click)="saveItem()" type="button" class="btn btn-primary">Guardar</button>
   </form>
 </div>

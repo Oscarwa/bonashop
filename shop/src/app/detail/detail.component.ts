@@ -14,6 +14,7 @@ export class DetailComponent implements OnInit {
   discountPercentagePrice: number = 0;
   discountAmountPrice: number = 0;
   hasDiscount: boolean = false;
+  displayPhoto: string = "/assets/no-photo.png";
   
   constructor(private productService: ProductService,
     private route: ActivatedRoute) { }
@@ -23,6 +24,7 @@ export class DetailComponent implements OnInit {
     if(!!editId) {
       this.productService.getSingle(editId).subscribe((i) => {
         this.infoURL = "https://api.whatsapp.com/send?phone=528115251019&text=Quisiera mas informacion de: " + i.title + ". " + encodeURI(window.location.href);
+        this.displayPhoto = i.photos.length > 0 ? i.photos[0].url : "";
         if(i.percentageDiscount > 0) {
           this.hasDiscount = true;
           this.discountPercentagePrice = i.price - (i.price * (i.percentageDiscount / 100))
@@ -33,6 +35,10 @@ export class DetailComponent implements OnInit {
         this.item = i
       });
     }
+  }
+  
+  swapPhoto(index) {
+    this.displayPhoto = this.item.photos[index].url;
   }
 
 }

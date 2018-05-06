@@ -1,0 +1,50 @@
+.container {
+    text-align: left;
+}
+
+ul.photos-thumbs {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    background-color: #ddd;
+}
+ul.photo-thumbs li {
+    display: inline;
+}
+
+.result {
+    position: relative; 
+    z-index: 1;
+}
+
+.result img {
+    margin: 5px;
+}
+
+.result:hover .delete {
+    opacity: 1;
+}
+
+.delete {
+    background-image: url('/assets/delete.png');
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+    display: block;
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-position: 2px 2px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    top: -44px;
+    right: 14px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+.delete:hover {
+    transform: scale(1.3);
+}

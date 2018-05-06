@@ -8,14 +8,15 @@ import { NewProductComponent } from './new-product/new-product.component';
 import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent },
+  //{path: 'home', component: HomeComponent },
+  {path: 'home', component: SearchComponent },
   {path: 'search', component: SearchComponent },
   {path: 'detail/:id', component: DetailComponent },
   {path: 'admin', component: AdminComponent },
   {path: 'admin/new', component: NewProductComponent },  
   {path: 'admin/edit/:id', component: NewProductComponent },  
 
-  {path: '', redirectTo: '/home', pathMatch: 'full'},  
+  {path: '', redirectTo: '/search', pathMatch: 'full'},  
 ];
 
 @NgModule({

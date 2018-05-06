@@ -55,3 +55,17 @@
 {
     margin: 0 0 11px;
 }
+
+p.card-text {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .9em;
+    text-align: justify;
+}
+
+.card-block {
+    padding: 5px;
+}
