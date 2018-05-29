@@ -43,9 +43,10 @@
         <small>{{product.price}}</small>
         
     </div>
-    <div class="col-2">
-      <button type="button" routerLink="edit/{{product.$key}}" class="btn btn-primary btn-sm">Edit</button>
-      <button type="button" (click)="delete(product.$key)" class="btn btn-secondary btn-sm">Delete</button>
+    <div class="col-3 tools">
+      <button type="button" routerLink="edit/{{product.$key}}" class="btn btn-primary btn-sm">Editar</button>
+      <button type="button" (click)="delete(product.$key)" class="btn btn-secondary btn-sm">Borrar</button>
+      <button type="button" routerLink="/detail/{{product.$key}}" class="btn btn-secondary btn-sm">Ver</button>
     </div>
     <hr />
   </div>

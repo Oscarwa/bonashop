@@ -1,6 +1,6 @@
 <div class="messages container">
   <div class="row">
-    <div class="col-sm-4" 
+    <div class="col-sm-3 prod" 
       *ngFor="let product of products | async">
         <div class="card" (click)="goTo(product.$key)">
 
@@ -9,7 +9,6 @@
           <img class="card-img-top" *ngIf="!product.photos" src="./assets/no-photo.png" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">{{product.title}}</h4>
-            <p class="card-text">{{product.description}}</p>
             <span class="btn btn-primary">${{product.price}}</span>
           </div>
         </div>

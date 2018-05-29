@@ -139,3 +139,10 @@
 .container .product-grid:nth-child(odd) {
     background-color: #c0c0c0;
 }
+
+.product-grid .tools {
+    line-height: 50px;
+}
+.tools .btn {
+    margin: 10px;
+}
