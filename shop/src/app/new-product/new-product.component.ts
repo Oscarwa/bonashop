@@ -33,7 +33,8 @@ export class NewProductComponent implements OnInit {
       this.item.cat_all = this.item.cat_child = this.item.cat_men = this.item.cat_women = false;
       var now = new Date();
       this.item.date_available = now.getFullYear() + '-' + this.zeroFill(now.getMonth() + 1) + '-' + this.zeroFill(now.getDate());
-      console.info(this.item.date_available)
+      this.item.percentageDiscount = 0;
+      this.item.amountDiscount = 0;
     }
   }
 
