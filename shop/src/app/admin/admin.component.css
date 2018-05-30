@@ -24,6 +24,15 @@
     cursor: default;
 }
 
+.btn.btn-primary {
+    background-color: #edb1ef;
+    border-color: #edb1ef;
+}
+.btn.btn-secondary {
+    background-color: #b2b8bd;
+    border-color: #b2b8bd;
+}
+
 /*
  * Card component
  */
@@ -137,7 +146,7 @@
 }
 
 .container .product-grid:nth-child(odd) {
-    background-color: #c0c0c0;
+    background-color: #fed7ff;
 }
 
 .product-grid .tools {
@@ -145,4 +154,7 @@
 }
 .tools .btn {
     margin: 10px;
+}
+a {
+    color: #edb1ef;
 }

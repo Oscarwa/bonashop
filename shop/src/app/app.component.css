@@ -6,7 +6,7 @@
 }
 
 .masthead-brand {
-    text-align: left;
+    text-align: center;
 }
 sailor {
     padding-bottom: 86px;
@@ -15,4 +15,9 @@ sailor {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 1.5rem;
+}
+
+.nav a {
+    color: rgb(241, 182, 243);
+    text-shadow: 1px 2px 6px black;
 }
