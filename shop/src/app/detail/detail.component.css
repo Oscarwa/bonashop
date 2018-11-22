@@ -53,7 +53,7 @@ body {
   
   .card {
     margin-top: 50px;
-    background: #fff1ff;
+    background: #ac9ab9;
     padding: 3em;
     line-height: 1.5em; }
   
@@ -87,7 +87,7 @@ body {
     font-weight: bold; }
   
   .checked, .price span {
-    color: #edb1ef; }
+    color: #2833cc; }
 
     .strike {
         text-decoration: line-through;
@@ -118,7 +118,7 @@ body {
       margin-left: 20px; }
   
   .add-to-cart, .like {
-    background: #edb1ef;
+    background: #5f597b;
     padding: 1.2em 1.5em;
     border: none;
     text-transform: UPPERCASE;
@@ -127,7 +127,7 @@ body {
     -webkit-transition: background .3s ease;
             transition: background .3s ease; }
     .add-to-cart:hover, .like:hover {
-      background: #edb1ef;
+      background: #8078a5;
       color: #fff; }
   
   .not-available {
@@ -169,3 +169,13 @@ body {
       opacity: 1;
       -webkit-transform: scale(1);
               transform: scale(1); } }
+
+
+@media (max-width: 991.98px) { 
+  .card {
+    padding: 0.5em;
+  }  
+  .product-title {
+    font-size: 1.3rem;
+  }
+}

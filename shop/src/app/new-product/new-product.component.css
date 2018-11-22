@@ -1,5 +1,14 @@
 .container {
     text-align: left;
+    color: #fff;
+}
+
+.form-control {
+    background-color: #cfc6f7;
+}
+.form-control:focus {
+    
+    background-color: #bbcbf5;
 }
 
 ul.photos-thumbs {

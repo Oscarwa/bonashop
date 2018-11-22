@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyAYEI8s_g0qjbLJB7ddd1Ui_NiNSTN_B8Y",
-    authDomain: "enalaska-77d95.firebaseapp.com",
-    databaseURL: "https://enalaska-77d95.firebaseio.com",
-    projectId: "enalaska-77d95",
-    storageBucket: "enalaska-77d95.appspot.com",
-    messagingSenderId: "430977401337"
+    apiKey: "AIzaSyAS-PFDWwO4jWewpmwRsx5j3A-IdRyDfII",
+    authDomain: "don-bono.firebaseapp.com",
+    databaseURL: "https://don-bono.firebaseio.com",
+    projectId: "don-bono",
+    storageBucket: "don-bono.appspot.com",
+    messagingSenderId: "911724368745"
   }
 };

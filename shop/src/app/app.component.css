@@ -3,13 +3,14 @@
     bottom: 0px;
     width: 96%;
     overflow: hidden;
+    color: white;
 }
 
 .masthead-brand {
     text-align: center;
 }
-sailor {
-    padding-bottom: 86px;
+.display-4 {
+    color: white;
 }
 .nav {
     font-size: 1.5em;
@@ -18,6 +19,6 @@ sailor {
 }
 
 .nav a {
-    color: rgb(241, 182, 243);
-    text-shadow: 1px 2px 6px black;
+    color: #999fc1;
+    text-shadow: 2px 3px 6px #17161f;
 }

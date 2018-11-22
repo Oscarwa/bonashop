@@ -24,20 +24,24 @@
     cursor: default;
 }
 
+a.btn {
+    color: white;
+}
+.btn {
+    background-color: #8168ab;
+}
 .btn.btn-primary {
-    background-color: #edb1ef;
-    border-color: #edb1ef;
+    background-color: #8168ab;
 }
 .btn.btn-secondary {
-    background-color: #b2b8bd;
-    border-color: #b2b8bd;
+    background-color: #5b6873;
 }
 
 /*
  * Card component
  */
 .card {
-    background-color: #F7F7F7;
+    background-color: #cbc6dc;
     /* just in case there no content*/
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
@@ -117,7 +121,7 @@
 
 .btn.btn-signin {
     /*background-color: #4d90fe; */
-    background-color: rgb(104, 145, 162);
+    background-color: #4e6e7b;
     /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
     padding: 0px;
     font-weight: 700;
@@ -136,17 +140,20 @@
 .btn.btn-signin:hover,
 .btn.btn-signin:active,
 .btn.btn-signin:focus {
-    background-color: rgb(12, 97, 33);
+    background-color: #0c3761;
 }
 
 .forgot-password:hover,
 .forgot-password:active,
 .forgot-password:focus{
-    color: rgb(12, 97, 33);
+    color: #0c3761;
 }
 
 .container .product-grid:nth-child(odd) {
-    background-color: #fed7ff;
+    background-color: #6a5c88;
+}
+.container .product-grid:nth-child(even) {
+    background-color: #7e6e9e;
 }
 
 .product-grid .tools {

@@ -28,7 +28,7 @@ export class DetailComponent implements OnInit {
     if(!!editId) {
       this.productService.getSingle(editId).subscribe((i) => {
         let finalPrice = i.price;
-        this.infoURL = "https://api.whatsapp.com/send?phone=528115251019&text=Quisiera mas informacion de: " + i.title + ". " + encodeURI(window.location.href);
+        this.infoURL = "https://api.whatsapp.com/send?phone=528115359387&text=Quisiera mas informacion de: " + i.title + ". " + encodeURI(window.location.href);
         this.displayPhoto = i.photos.length > 0 ? i.photos[0].url : "";
         i.description = i.description.replace(new RegExp('\n', 'g'), "<br />")
         if(i.percentageDiscount > 0) {
