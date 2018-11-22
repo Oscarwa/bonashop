@@ -1,3 +1,4 @@
+:focus { outline: none; }
 .mastfoot {
     position: absolute;
     bottom: 0px;
@@ -9,7 +10,10 @@
 .masthead-brand {
     text-align: center;
 }
-.display-4 {
+.masthead-brand img {
+    width: 200px;
+}
+.display-5 {
     color: white;
 }
 .nav {
@@ -22,3 +26,15 @@
     color: #999fc1;
     text-shadow: 2px 3px 6px #17161f;
 }
+
+@media (max-width: 991.98px) { 
+    .masthead-brand img {
+        width: 100px;
+    }
+ }
+
+ @media (max-width: 767.98px) { 
+    .display-5 {
+        font-size: 2rem;
+    }
+ }

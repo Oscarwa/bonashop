@@ -1,4 +1,7 @@
-
+.btn.btn-primary {
+    background-color: #775c9a;
+    border: 0;
+}
 
 p.card-text {
     margin-top: 0;
@@ -12,14 +15,18 @@ p.card-text {
 
 .card {
     display:block;
-    height:200px;
-    line-height:200px;
+    height:100%;
     overflow:hidden;
+    padding: 5px;
+}
+
+.card-title {
+    font-size: 1rem;
+    margin: 10px;
 }
 
 .card-img-top {
     position: relative;
-    margin: -50% auto;/* virtualy height needed turn don to zero */
     width: 100%;/* height will follow within image ratio */
     height:auto;/* to overrride attribute height set in tag */
     vertical-align:middle;
@@ -28,3 +35,10 @@ p.card-text {
 .prod {
     margin-bottom: 1rem;
 }
+
+@media (max-width: 991.98px) { 
+    .btn {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+ }
